@@ -47,6 +47,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/add-car', [AddCarController::class, 'index'])->name('add_car_page');
     Route::post('/add-car-post', [AddCarController::class, 'addCar'])->name('add_car');
     Route::post('/admin/car/price/add', [AddCarController::class, 'addCarPrices'])->name('add_car_prices');
+    Route::delete('/admin/cars/{id}', [AddCarController::class, 'deleteCar'])->name('admin_car_delete');
     Route::get('/ticket', [TicketsController::class, 'index'])->name('admin_ticket');
     Route::get('/ticket/{id}', [TicketsController::class, 'deleteTicket'])->name('admin_ticket_delete');
 });

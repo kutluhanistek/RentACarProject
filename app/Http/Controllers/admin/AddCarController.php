@@ -54,4 +54,11 @@ class AddCarController extends Controller
 
         return redirect()->back()->with('success', 'Fiyat bilgisi başarıyla eklendi.');
     }
+
+    public function deleteCar($id){
+        $car = Car::findOrFail($id);
+        $car->delete();
+
+        return redirect()->route('admin_cars')->with('success', 'Araç başarıyla silindi.');
+    }
 }
