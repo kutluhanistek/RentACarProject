@@ -259,6 +259,15 @@
                                             <h6 class="text-sm mb-0">{{$car->model}}</h6>
                                         </div>
                                     </td>
+                                    <td class="text-end">
+                                        <form action="{{ route('admin_car_delete', $car->id) }}" method="POST" onsubmit="return confirm('Bu aracı silmek istediğinize emin misiniz?')">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-sm btn-danger py-1 px-3">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                             @endif
                         @endforeach
@@ -268,7 +277,6 @@
             </div>
         </div>
     </div>
-
     </div>
 </main>
 
